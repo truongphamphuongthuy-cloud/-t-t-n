@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thư viện ảnh thú cưng</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+       <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Danh sách thú cưng</h1>
-    <div class="dv-container" id="dvList"></div>
-
-    <h2>Thư viện ảnh</h2>
-    <div class="gallery" id="gallery"></div>
     
-    <script src="na.js"></script>
+    <h1>Danh sách các thú cưng</h1>
+    <div class="ten-container" id="danhsach"></div>
+    <div id="chochantrang"></div>
+
+
+    <script>
+    fetch("footer.html")
+    .then(dulieu=>dulieu.text())
+    .then(thongtin=>{
+    document.getElementById("chochantrang").innerHTML=thongtin;
+    })
+    
+    </script>
+
+
+
+    <script src="main.js"></script>
 </body>
 </html>
