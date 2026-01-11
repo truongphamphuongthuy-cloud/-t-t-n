@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết thú cưng</title>
+    <title>Chi tiết động vật</title>
     <link rel="stylesheet" href="chitiet.css">
 </head>
 <body>
-    <button id="backhome">BACKHOME</button>
-    <div id="noidung"></div>
+    <div id="container">
+        <button id="backhome">⬅ Back Home</button>
+
+        <div id="noidung">
+            </div>
+
+        <div id="chan"></div>
+    </div>
+
+    <script>
+        // Tự động tải phần footer từ file chan.html
+        fetch('chan.html')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('chan').innerHTML = data;
+          })
+          .catch(err => console.error("Lỗi khi tải footer:", err));
+    </script>
+
     <script src="chitiet.js"></script>
 </body>
 </html>

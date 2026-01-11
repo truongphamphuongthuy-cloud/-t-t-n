@@ -1,48 +1,28 @@
-home = document.getElementById("backhome");
-backhome.addEventListener("click", () => {
+const goHome = document.getElementById("backhome");
+goHome.addEventListener("click", () => {
     window.location.href = "index.html";
 });
 
-const dulieunhan = JSON.parse(localStorage.getItem("dulieutrangchu"));
+const dulieunhan = JSON.parse(localStorage.getItem('dongvatSelected'));
 
 function hienthichitiet(data) {
-    if (!data) {
-        document.body.innerHTML = "<p>Không tìm thấy dữ liệu địa điểm</p>";
-        return;
-    }
-
-    let chitietcontainer = document.getElementById("noidung");
-    if (!chitietcontainer) {
-        chitietcontainer = document.createElement("div");
-        chitietcontainer.id = "noidung";
-        document.body.appendChild(chitietcontainer);
-    }
-
-    
-    chitietcontainer.innerHTML = `
-        <h1>${data.tendv}</h1>
-        <img src="${data.anh}" alt="${data.tendv}" style="width: 100%; max-width: 500px;">
-        <p>tuổi thọ: ${data.tt}</p>
+    const chitietContainer = document.getElementById("noidung");
+    chitietContainer.innerHTML = `
+        <h1>${data.ten}</h1>
+        <p>${data.diaiem}</p>
         <p>${data.mota}</p>
-        <h2>Thư viện hình ảnh</h2>
-        <div id="image-gallery" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+        <h2>Thư viện ảnh</h2>
+        <div id="img-gallery" class='img-gallery'></div>
     `;
 
-    loadGallery(data);
-}
-
-function loadGallery(data) {
-    const gallery = document.getElementById("image-gallery");
-    gallery.innerHTML = "";
-
-    for (let i = 1; i <= data.imgCount; i++) {
+    const galleryContainer = document.getElementById("img-gallery");
+    for(let i = 1; i <= data.imgCount; i++) {
         const img = document.createElement("img");
+        // Đường dẫn ví dụ: ./lion/lion_1.jpg
         img.src = `${data.folder}/${data.prefix}${i}.jpg`;
-        img.alt = `${data.tendv} ${i}`;
-        gallery.appendChild(img);  
+        img.alt = `${data.ten} ${i}`;
+        galleryContainer.appendChild(img);
     }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-    hienthichitiet(dulieunhan);
-});
+hienthichitiet(dulieunhan);

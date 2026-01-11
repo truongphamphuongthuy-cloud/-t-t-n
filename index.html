@@ -1,29 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-       <link rel="stylesheet" href="styles.css">
+    <title>Thế Giới Động Vật</title>
+    <link href="trangchu.css" rel="stylesheet">
 </head>
 <body>
-    
-    <h1>Danh sách các thú cưng</h1>
-    <div class="ten-container" id="danhsach"></div>
-    <div id="chochantrang"></div>
+    <h1>Khám Phá Thế Giới Động Vật</h1>
+    <div class="dongvat-container" id="dongvatList"></div>
+   
+    <div id="chan"></div>
 
 
     <script>
-    fetch("footer.html")
-    .then(dulieu=>dulieu.text())
-    .then(thongtin=>{
-    document.getElementById("chochantrang").innerHTML=thongtin;
-    })
-    
+        // Load footer dùng chung
+        fetch('chan.html')
+          .then(res => res.text())
+          .then(data => { document.getElementById('chan').innerHTML = data; });
     </script>
-
-
-
-    <script src="main.js"></script>
+    <script src="trangchu.js"></script>
 </body>
 </html>

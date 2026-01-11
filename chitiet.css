@@ -1,26 +1,91 @@
-    body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        #backhome {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-        #backhome:hover {
-            background-color: #45a049;
-        }
-        #noidung {
-            margin-top: 20px;
-        }
-        .image-gallery img {
-            width: 200px;
-            height: 150px;
-            object-fit: cover;
-            margin: 5px;
-            border-radius: 5px;
-        }
+/* chitiet.css - Giao diện chi tiết từng con vật */
+
+/* Thiết lập tổng quan */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+;
+}
+
+/* Nút quay lại trang chủ */
+#backhome {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin: 30px 0;
+    align-self: flex-start;
+    margin-left: 10%; /* Căn lề nút cho đẹp */
+}
+
+#backhome:hover {
+    background-color: #16a085;
+    transform: translateX(1.05px); /* Hiệu ứng dịch chuyển nhẹ khi hover */
+}
+
+/* Container nội dung chính */
+#noidung {
+    background: white;
+    max-width: 1000px;
+    width: 80%;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+    
+}
+
+/* Tiêu đề con vật */
+#noidung h1 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 2.8rem;
+    border-bottom: 4px solid #f1c40f;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+}
+
+/* Thông tin khu vực */
+#noidung p:first-of-type {
+    font-weight: bold;
+    color: #7f8c8d;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+/* Mô tả chi tiết */
+#noidung p:last-of-type {
+    font-size: 1.1rem;
+    margin: 25px 0;
+    text-align: justify;
+    color: #444;
+}
+
+/* Thư viện ảnh (Hiển thị 5-7 ảnh) */
+.img-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.img-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}

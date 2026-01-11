@@ -1,0 +1,81 @@
+/* style.css - Giao diện Trang chủ */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cập nhật font cho hiện đại */
+    text-align: center;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Đảm bảo body luôn chiếm hết chiều cao màn hình */
+}
+
+h1 {
+    color: #2c3e50;
+    margin-top: 40px;
+    font-size: 2.5rem;
+}
+
+/* Container chứa danh sách con vật */
+.dongvat-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto;
+    flex: 1; /* Đẩy footer xuống dưới cùng */
+}
+
+/* Thẻ card cho từng con vật */
+.dongvat-card {
+    background: white; /* Đổi sang nền trắng cho sạch sẽ */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    width: 250px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden; /* Cắt ảnh thừa ở góc bo tròn */
+    border-bottom: 5px solid #1abc9c; /* Nhấn nhá màu sắc đồng bộ với nút Back Home */
+}
+
+.dongvat-card:hover {
+    transform: translateY(-10px); /* Hiệu ứng bay lên khi di chuột */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Hình ảnh đại diện con vật */
+.dongvat-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.dongvat-card:hover img {
+    transform: scale(1.1); /* Phóng to ảnh nhẹ khi hover */
+}
+.dongvat-name {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+}
+#chan {
+    width: 100%;
+}
+@media (max-width: 600px) {
+    .dongvat-card {
+        width: 80%;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+    .dongvat-container {
+        gap: 20px;
+        margin: 20px auto;
+    }
+}

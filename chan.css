@@ -1,0 +1,92 @@
+/* Thiết lập chung để Footer luôn nằm dưới cùng trang web */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Đảm bảo layout linh hoạt */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#chan {
+    margin-top: auto; /* Đẩy footer xuống đáy nếu nội dung trang ít */
+    width: 100%;
+}
+
+/* Container chính của Footer */
+#footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #000000 100%); /* Hiệu ứng màu gradient sang trọng */
+    color: #ecf0f1;
+    padding: 40px 10% 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Hỗ trợ hiển thị tốt trên điện thoại */
+    gap: 30px;
+    border-top: 4px solid #1abc9c; /* Đường kẻ xanh đặc trưng của trang chi tiết */
+    text-align: center;
+}
+
+/* Từng cột thông tin */
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Tiêu đề các cột */
+#footer h4 {
+    color: #f1c40f; /* Màu vàng nhấn mạnh */
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Gạch chân trang trí dưới tiêu đề */
+#footer h4::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #1abc9c;
+    margin-top: 8px;
+}
+
+/* Nội dung văn bản trong footer */
+#footer p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #bdc3c7;
+}
+
+/* Định dạng các đường link mạng xã hội */
+#footer a {
+    color: #1abc9c;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+#footer a:hover {
+    color: #f1c40f;
+    padding-left: 8px; /* Hiệu ứng dịch chuyển nhẹ khi di chuột vào */
+}
+
+
+
+/* Responsive cho thiết bị di động */
+@media (max-width: 768px) {
+    #footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #footer h4::after {
+        margin: 8px auto;
+    }
+}
